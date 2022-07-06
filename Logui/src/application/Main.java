@@ -1,18 +1,9 @@
 package application;
 	
-import javafx.application.Application;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.stage.Stage;
-import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.VBox;
+import java.beans.EventHandler;
+import javax.swing.text.html.ImageView;
+
+
 
 
 public class Main extends Application {
@@ -42,30 +33,30 @@ public class Main extends Application {
 					vbox.setSpacing(40);
 					Label lnl = new Label(" USUARIO");
 					TextField text = new TextField();
-					Label lbl = new Label(" CONTRASEÑA");
+					Label lbl = new Label(" CONTRASEï¿½A");
 					PasswordField  pwr= new PasswordField();
 					vbox.getChildren().addAll(lnl,text,lbl, pwr);
 					Vbox.getChildren().add(vbox);
 
 
-					 Button btn = new Button("ACEPTAR");
-					 btn.setOnAction(new EventHandler<ActionEvent> () {
+					Button btn = new Button("ACEPTAR");
+					btn.setOnAction(new EventHandler<ActionEvent> () {
 						@Override
 						public void handle(ActionEvent arg0) {
 						if(text.getText().equals("")||(pwr.getText().equals(""))){
-						 System.out.println("ingrese datos");
-					 }else {
-						 if((text.getText().equals("Amanecer"))&&(pwr.getText().equals("admin"))) {
-							 System.out.println("ingreso acptado"); 
-						 }else {
-							 System.out.println("Error"); 
-						 }
-					 }
+						System.out.println("ingrese datos");
+					}else {
+						if((text.getText().equals("Amanecer"))&&(pwr.getText().equals("admin"))) {
+							System.out.println("ingreso acptado"); 
+						}else {
+							System.out.println("Error"); 
+						}
+					}
 						}
 						 
-					 });
-					 btn.setStyle("-fx-background-color: orange;");
-					 Vbox.getChildren().add(btn);
+					});
+					btn.setStyle("-fx-background-color: orange;");
+					Vbox.getChildren().add(btn);
 					
 							
 					AnchorPane root  = new AnchorPane();
